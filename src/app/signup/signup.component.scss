@@ -1,0 +1,54 @@
+@import '../../styles.scss';
+
+.container-fluid, .row {
+    height: 100%;
+}
+
+.login-left-col {
+    background-color: $green-color;
+}
+
+.login-right-col > main {
+    max-width: 360px;
+    padding: 15px;
+    position: relative;
+    top: 15%;
+}
+
+.login-input {
+    border-radius: 0px;
+}
+
+.login-input:focus {
+    color: $black;
+    background-color: $white;
+    border-color: $green-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem $green-color-shadow;
+}
+
+.login-btn {
+    border-radius: 0px;
+    background-color: $green-color;
+    border-color: $green-color;
+    color: $white;
+}
+
+.login-btn:hover {
+    background-color: $green-color-hover;
+    border-color: $green-color-hover;
+    color: $white;
+}
+
+.error-login {
+    color: $red-error;
+}
+
+.error-input:focus {
+    border-color: $red-error;
+    box-shadow: 0 0 0 0.25rem $red-error-shadow;
+}
+
+.error-input {
+    border-color: #ff0000;
+}

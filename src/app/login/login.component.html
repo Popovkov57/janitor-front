@@ -8,31 +8,26 @@
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <h1 class="h1 mb-5 fw-normal">Bienvenue !</h1>
                     <div class="form-floating">
-                        <input 
-                            type="text" 
-                            class="form-control login-input" 
-                            id="loginUsername" 
-                            placeholder="JohnDoe"
+                        <input type="text" class="form-control login-input" id="loginUsername" placeholder="JohnDoe"
                             formControlName="userName"
                             [class.error-input]="userName && userName.errors && userName.errors.maxlength">
                         <label for="loginUsername">Username</label>
-                        <span class="form-text error-login" *ngIf="userName && userName.errors && userName.errors.maxlength">
+                        <span class="form-text error-login"
+                            *ngIf="userName && userName.errors && userName.errors.maxlength">
                             Username ne doit pas dépasser 20 caractères !
                         </span>
                     </div>
                     <div class="form-floating mt-4">
-                        <input 
-                            type="password" 
-                            class="form-control login-input" 
-                            id="loginPassword" 
-                            placeholder="Password"
-                            formControlName="password">
+                        <input type="password" class="form-control login-input" id="loginPassword"
+                            placeholder="Password" formControlName="password">
                         <label for="loginPassword">Password</label>
-                        <span class="form-text error-login" *ngIf="password && password.errors && password.errors.maxlength">
+                        <span class="form-text error-login"
+                            *ngIf="password && password.errors && password.errors.maxlength">
                             Password ne doit pas dépasser 120 caractères !
                         </span>
                     </div>
-                    <button class="w-100 btn btn-lg mt-5 login-btn" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+                    <button class="w-100 btn btn-lg mt-5 login-btn" type="submit" [disabled]="!loginForm.valid">Sign
+                        in</button>
                     <p class="mt-5 mb-3 text-muted">Pas encore de compte ? <a href="#">Inscrivez-vous</a></p>
                 </form>
             </main>

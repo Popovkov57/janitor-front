@@ -1,0 +1,62 @@
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="login-left-col col-6 m-0 p-0">
+            <img src="../../assets/logo_exceptis.png" alt="" style="width: 400px; position: relative; top:25%">
+        </div>
+        <div class="login-right-col col-6 m-0 p-0">
+            <main class="form-signin w-100 m-auto">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <h1 class="h1 mb-5 fw-normal">Enregistrez-vous !</h1>
+                    <div class="form-floating">
+                        <input type="text" class="form-control login-input" id="signupUsername" placeholder="JohnDoe"
+                            formControlName="userName"
+                            [class.error-input]="userName && userName.errors && userName.errors.maxlength">
+                        <label for="signupUsername">Username</label>
+                        <span class="form-text error-login"
+                            *ngIf="userName && userName.errors && userName.errors.maxlength">
+                            Username ne doit pas dépasser 20 caractères !
+                        </span>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="email" class="form-control login-input" id="signupEmail" placeholder="john@doe.com"
+                            formControlName="email"
+                            [class.error-input]="email && email.errors && email.errors.maxlength">
+                        <label for="signupEmail">Email</label>
+                        <span class="form-text error-login" *ngIf="email && email.errors && email.errors.maxlength">
+                            Email ne doit pas dépasser 50 caractères !
+                        </span>
+                        <span class="form-text error-login" *ngIf="email && email.errors && email.errors.email">
+                            Veuillez entrer une adresse e-mail valide !
+                        </span>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="password" class="form-control login-input" id="signupPassword"
+                            placeholder="password" formControlName="password"
+                            [class.error-input]="password && password.errors && password.errors.maxlength">
+                        <label for="signupPassword">Password</label>
+                        <span class="form-text error-login"
+                            *ngIf="password && password.errors && password.errors.maxlength">
+                            Password ne doit pas dépasser 120 caractères !
+                        </span>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="password" class="form-control login-input" id="signupPasswordConfirmation"
+                            placeholder="password" formControlName="passwordConfirmation"
+                            [class.error-input]="passwordConfirmation && passwordConfirmation.errors && passwordConfirmation.errors.maxlength">
+                        <label for="signupPasswordConfirmation">Password confirmation</label>
+                        <span class="form-text error-login"
+                            *ngIf="passwordConfirmation && passwordConfirmation.errors && passwordConfirmation.errors.maxlength">
+                            Password ne doit pas dépasser 120 caractères !
+                        </span>
+                        <span class="form-text error-login"
+                            *ngIf="signupForm.hasError('notMatching') && passwordConfirmation && passwordConfirmation.value && passwordConfirmation.value.length > 0">
+                            Les password sont différents !
+                        </span>
+                    </div>
+                    <button class="w-100 btn btn-lg mt-5 login-btn" type="submit"
+                        [disabled]="!signupForm.valid">S'inscrire</button>
+                </form>
+            </main>
+        </div>
+    </div>
+</div>
