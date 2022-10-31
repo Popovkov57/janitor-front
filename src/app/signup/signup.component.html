@@ -11,19 +11,19 @@
                         <input type="text" class="form-control login-input" id="signupUsername" placeholder="JohnDoe"
                             formControlName="userName"
                             [class.error-input]="userName && userName.errors && userName.errors.maxlength">
-                        <label for="signupUsername">Username</label>
+                        <label for="signupUsername">Nom d'utilisateur</label>
                         <span class="form-text error-login"
                             *ngIf="userName && userName.errors && userName.errors.maxlength">
-                            Username ne doit pas dépasser 20 caractères !
+                            Votre nom d'utilisateur ne doit pas dépasser 20 caractères !
                         </span>
                     </div>
                     <div class="form-floating mt-4">
                         <input type="email" class="form-control login-input" id="signupEmail" placeholder="john@doe.com"
                             formControlName="email"
                             [class.error-input]="email && email.errors && email.errors.maxlength">
-                        <label for="signupEmail">Email</label>
+                        <label for="signupEmail">Adresse e-mail</label>
                         <span class="form-text error-login" *ngIf="email && email.errors && email.errors.maxlength">
-                            Email ne doit pas dépasser 50 caractères !
+                            Votre adresse e-mail ne doit pas dépasser 50 caractères !
                         </span>
                         <span class="form-text error-login" *ngIf="email && email.errors && email.errors.email">
                             Veuillez entrer une adresse e-mail valide !
@@ -33,24 +33,20 @@
                         <input type="password" class="form-control login-input" id="signupPassword"
                             placeholder="password" formControlName="password"
                             [class.error-input]="password && password.errors && password.errors.maxlength">
-                        <label for="signupPassword">Password</label>
+                        <label for="signupPassword">Mot de passe</label>
                         <span class="form-text error-login"
                             *ngIf="password && password.errors && password.errors.maxlength">
-                            Password ne doit pas dépasser 120 caractères !
+                            Votre mot de passe ne doit pas dépasser 120 caractères !
                         </span>
                     </div>
                     <div class="form-floating mt-4">
                         <input type="password" class="form-control login-input" id="signupPasswordConfirmation"
                             placeholder="password" formControlName="passwordConfirmation"
                             [class.error-input]="passwordConfirmation && passwordConfirmation.errors && passwordConfirmation.errors.maxlength">
-                        <label for="signupPasswordConfirmation">Password confirmation</label>
-                        <span class="form-text error-login"
-                            *ngIf="passwordConfirmation && passwordConfirmation.errors && passwordConfirmation.errors.maxlength">
-                            Password ne doit pas dépasser 120 caractères !
-                        </span>
+                        <label for="signupPasswordConfirmation">Confirmation du mot de passe</label>
                         <span class="form-text error-login"
                             *ngIf="signupForm.hasError('notMatching') && passwordConfirmation && passwordConfirmation.value && passwordConfirmation.value.length > 0">
-                            Les password sont différents !
+                            Les mots de passe sont différents !
                         </span>
                     </div>
                     <button class="w-100 btn btn-lg mt-5 login-btn" type="submit"

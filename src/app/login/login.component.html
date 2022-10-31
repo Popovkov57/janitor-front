@@ -11,19 +11,19 @@
                         <input type="text" class="form-control login-input" id="loginUsername" placeholder="JohnDoe"
                             formControlName="userName"
                             [class.error-input]="userName && userName.errors && userName.errors.maxlength">
-                        <label for="loginUsername">Username</label>
+                        <label for="loginUsername">Nom d'utilisateur</label>
                         <span class="form-text error-login"
                             *ngIf="userName && userName.errors && userName.errors.maxlength">
-                            Username ne doit pas dépasser 20 caractères !
+                            Votre Nom d'utilisateur ne doit pas dépasser 20 caractères !
                         </span>
                     </div>
                     <div class="form-floating mt-4">
                         <input type="password" class="form-control login-input" id="loginPassword"
                             placeholder="Password" formControlName="password">
-                        <label for="loginPassword">Password</label>
+                        <label for="loginPassword">Mot de passe</label>
                         <span class="form-text error-login"
                             *ngIf="password && password.errors && password.errors.maxlength">
-                            Password ne doit pas dépasser 120 caractères !
+                            Votre mot de passe ne doit pas dépasser 120 caractères !
                         </span>
                     </div>
                     <button class="w-100 btn btn-lg mt-5 login-btn" type="submit" [disabled]="!loginForm.valid">Sign
