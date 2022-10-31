@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+
+$green-color: #00656F;
+$green-color-hover: #005159;
+$green-color-shadow: #00656f29;
+
+$white: #fff;
+
+$black: #000000;
+
+$red-error: #ff0000ba;
+$red-error-shadow: rgb(255 1 0 / 16%);
