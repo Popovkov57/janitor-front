@@ -16,4 +16,8 @@ export class AuthService {
     return this.http.post<User>('/api/auth/signup', newUser);
   }
 
+  signin(user: User): Observable<any> {
+    return this.http.post('/api/auth/signin', user)
+  }
+
 }

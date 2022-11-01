@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     passwordConfirmation: new FormControl('', [Validators.required, Validators.maxLength(120)]),
   }, { validators: [MatchValidator.validate] });
 
-  constructor(private route: Router, private authRepository: AuthService, private toastr: ToastrService) { }
+  constructor(private router: Router, private authRepository: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -32,8 +32,9 @@ export class SignupComponent implements OnInit {
     this.user.password = this.password?.value ? this.password.value : '';
 
     this.authRepository.signup(this.user).subscribe(res => {
+      this.signupForm.reset();
       this.toastr.success(res.message, 'Succès');
-      this.route.navigate(['login']);
+      this.router.navigate(['login']);
     }, err => {
       this.toastr.error(err.error.message ? err.error.message : '', 'Erreur');
     });
