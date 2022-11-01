@@ -35,8 +35,8 @@
                             [class.error-input]="password && password.errors && password.errors.maxlength">
                         <label for="signupPassword">Mot de passe</label>
                         <span class="form-text error-login"
-                            *ngIf="password && password.errors && password.errors.maxlength">
-                            Votre mot de passe ne doit pas dépasser 120 caractères !
+                            *ngIf="password && password.errors && (password.errors.maxlength || password.errors.minlength)">
+                            Votre mot de passe ne doit contenir entre 6 et 120 caractères !
                         </span>
                     </div>
                     <div class="form-floating mt-4">
