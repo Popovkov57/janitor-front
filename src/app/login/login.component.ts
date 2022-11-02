@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
     this.authRepository.signin(this.user).subscribe(res => {
       this.loginForm.reset();
+      localStorage.setItem('accessToken', res.accessToken);
       this.toastr.success('Autentification réussie', 'Succès');
       this.router.navigate(['home']);
     }, err => {

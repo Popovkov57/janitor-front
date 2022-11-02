@@ -11,12 +11,13 @@ import { SignupComponent } from './signup/signup.component';
 import { User } from './user';
 import { AuthService } from './auth.service';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,13 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
