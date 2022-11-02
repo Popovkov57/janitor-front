@@ -1,10 +1,15 @@
-html, body {
-    height: 100%;
+html, body, .container-fluid {
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
 }
 
 $green-color: #00656F;
 $green-color-hover: #005159;
 $green-color-shadow: #00656f29;
+$green-color-background-light: #e0eced7d;
 
 $white: #fff;
 
@@ -12,3 +17,5 @@ $black: #000000;
 
 $red-error: #ff0000ba;
 $red-error-shadow: rgb(255 1 0 / 16%);
+
+$yellow: #fcd719;
