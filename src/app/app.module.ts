@@ -8,8 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 
-import { User } from './user';
-import { AuthService } from './auth.service';
+import { AuthService } from './_services/auth.service';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -17,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
-import { AuthInterceptor } from './auth.interceptor';
+import { AuthInterceptor } from './_interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
