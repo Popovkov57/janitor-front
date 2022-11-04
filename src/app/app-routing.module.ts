@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent, title: "Home", canActivate: [AuthGuard],
       children: [
-        { path: "dashboard", component: DashboardComponent, title: "Dashboard" },
-        { path: "customers", component: CustomersComponent, title: "Clients" },
-        { path: "partners", component: PartnersComponent, title: "Partenaires" },
-        { path: "requests", component: RequestsComponent, title: "Demandes" },
+        { path: "dashboard", component: DashboardComponent, title: "Dashboard", canActivate: [AuthGuard] },
+        { path: "customers", component: CustomersComponent, title: "Clients", canActivate: [AuthGuard] },
+        { path: "partners", component: PartnersComponent, title: "Partenaires", canActivate: [AuthGuard] },
+        { path: "requests", component: RequestsComponent, title: "Demandes", canActivate: [AuthGuard] },
         //{ path: "**", redirectTo: "product" },
     ]
   }
