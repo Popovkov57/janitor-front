@@ -4,10 +4,6 @@
     height: 100vh;
 }
 
-header {
-    height: 60px;
-}
-
 .text-header {
     color: $white;
 }
@@ -21,7 +17,12 @@ header {
 }
 
 .nav-link:hover {
-    color: #fcd719;
+    color: $yellow;
+}
+
+.nav-link.active {
+    color: $yellow;
+    background-color: $green-color;
 }
 
 .nav-bottom {
@@ -35,8 +36,4 @@ header {
 
 .icon-menu {
     margin-right: 8px;
-}
-
-.background-dashboard {
-    background-color: $green-color-background-light;
 }

@@ -17,13 +17,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './_interceptors/auth.interceptor';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PartnersComponent } from './partners/partners.component';
+import { CustomersComponent } from './customers/customers.component';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    PartnersComponent,
+    CustomersComponent,
+    RequestsComponent
   ],
   imports: [
     BrowserModule,

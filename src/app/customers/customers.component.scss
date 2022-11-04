@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+.full-height {
+    height: 100vh;
+}
+
+.navbar {
+    height: 70px;
+}
+
+.background-dashboard {
+    background-color: $green-color-background-light;
+}
+
+h2 {
+    color: $green-color;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.p-name {
+    color: #00000078;
+}
+
+.img-avatar {
+    height: 60px;
+}
+
+.bi-person-circle {
+    color: $green-color;
+}

@@ -4,6 +4,7 @@ import { User } from '../_models/user';
 import { AuthService } from '../_services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { AvatarGenerator } from 'random-avatar-generator';
 
 @Component({
   selector: 'app-signup',
@@ -23,8 +24,7 @@ export class SignupComponent implements OnInit {
 
   constructor(private router: Router, private authRepository: AuthService, private toastr: ToastrService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.user.username = this.userName?.value ? this.userName.value : '';

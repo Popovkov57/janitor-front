@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   
+  public user: User = {};
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -26,15 +28,27 @@ export class AuthService {
     return localStorage.getItem('accessToken');
   }
 
+  setAccessToken(accessToken: string) {
+    localStorage.setItem('accessToken', accessToken);
+  }
+
+  setCurrentUser(user: User) {
+    localStorage.setItem('username', user.username || "");
+    localStorage.setItem('email', user.email || "");
+  }
+
+  get currentUser(): User {
+    this.user.username = localStorage.getItem('username') || "";
+    this.user.email = localStorage.getItem('email') || "";
+    return this.user;
+  }
+
   get isLoggedIn(): boolean {
-    let accessToken = localStorage.getItem('accessToken');
-    return accessToken != null ? true : false;  
+    return localStorage.getItem('accessToken') != null ? true : false;  
   }
 
   logout() {
-    let accessToken = localStorage.removeItem('accessToken');
-    if (accessToken == null) {
-      this.router.navigate(['login']);
-    }
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 }

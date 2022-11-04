@@ -21,8 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private authRepository: AuthService, private toastr: ToastrService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.user.username = this.userName?.value ? this.userName.value : '';
@@ -30,9 +29,10 @@ export class LoginComponent implements OnInit {
 
     this.authRepository.signin(this.user).subscribe(res => {
       this.loginForm.reset();
-      localStorage.setItem('accessToken', res.accessToken);
+      this.authRepository.setCurrentUser(res);
+      this.authRepository.setAccessToken(res.accessToken);
       this.toastr.success('Autentification réussie', 'Succès');
-      this.router.navigate(['home']);
+      this.router.navigate(['home/dashboard']);
     }, err => {
       this.toastr.error(err.error.message, 'Erreur');
     })
