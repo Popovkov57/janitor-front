@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomersComponent } from './customers/customers.component';
 import { PartnersComponent } from './partners/partners.component';
 import { RequestsComponent } from './requests/requests.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,10 +16,11 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent, title: "Home", canActivate: [AuthGuard],
       children: [
-        { path: "dashboard", component: DashboardComponent, title: "Dashboard", canActivate: [AuthGuard] },
-        { path: "customers", component: CustomersComponent, title: "Clients", canActivate: [AuthGuard] },
-        { path: "partners", component: PartnersComponent, title: "Partenaires", canActivate: [AuthGuard] },
-        { path: "requests", component: RequestsComponent, title: "Demandes", canActivate: [AuthGuard] },
+        { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
+        { path: "customers", component: CustomersComponent, canActivate: [AuthGuard] },
+        { path: "partners", component: PartnersComponent, canActivate: [AuthGuard] },
+        { path: "requests", component: RequestsComponent, canActivate: [AuthGuard] },
+        { path: "users", component: UsersComponent, canActivate: [AuthGuard] }
         //{ path: "**", redirectTo: "product" },
     ]
   }
