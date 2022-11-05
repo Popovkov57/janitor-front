@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../_models/user';
-import { AuthService } from '../_services/auth.service';
+import { HeaderBarService } from '../_services/header-bar.service';
 
 @Component({
   selector: 'app-customers',
@@ -10,12 +9,10 @@ import { AuthService } from '../_services/auth.service';
 export class CustomersComponent implements OnInit {
 
   title: string = "Clients";
-  currentUser: User = {};
-
-  constructor(private authRepository: AuthService) { }
-
-  ngOnInit(): void {
-    this.currentUser = this.authRepository.currentUser;
+  constructor(private headerBarService: HeaderBarService) {
+    this.headerBarService.sendInfo(this.title);
   }
+
+  ngOnInit(): void {}
 
 }

@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PartnersComponent } from './partners/partners.component';
 import { CustomersComponent } from './customers/customers.component';
 import { RequestsComponent } from './requests/requests.component';
+import { HeaderBarComponent } from './header-bar/header-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RequestsComponent } from './requests/requests.component';
     DashboardComponent,
     PartnersComponent,
     CustomersComponent,
-    RequestsComponent
+    RequestsComponent,
+    HeaderBarComponent
   ],
   imports: [
     BrowserModule,
