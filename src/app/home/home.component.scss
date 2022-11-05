@@ -4,36 +4,6 @@
     height: 100vh;
 }
 
-.text-header {
-    color: $white;
-}
-
-.img-header {
-    height: 60px;
-}
-
-.nav-link {
-    color: white;
-}
-
-.nav-link:hover {
-    color: $yellow;
-}
-
-.nav-link.active {
-    color: $yellow;
-    background-color: $green-color;
-}
-
-.nav-bottom {
-    bottom: 5%;
-    position: absolute;
-}
-
 .sidebar {
     background-color: $green-color;
-}
-
-.icon-menu {
-    margin-right: 8px;
 }

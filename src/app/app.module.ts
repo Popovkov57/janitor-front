@@ -22,6 +22,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { CustomersComponent } from './customers/customers.component';
 import { RequestsComponent } from './requests/requests.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
     PartnersComponent,
     CustomersComponent,
     RequestsComponent,
-    HeaderBarComponent
+    HeaderBarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
